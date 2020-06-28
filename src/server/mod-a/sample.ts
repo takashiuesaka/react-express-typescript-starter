@@ -1,3 +1,3 @@
-export default () => {
-    return "hoge";
-}
+export default (): string => {
+  return "hoge";
+};

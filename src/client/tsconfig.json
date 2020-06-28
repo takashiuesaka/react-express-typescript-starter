@@ -8,7 +8,7 @@
     // JSXの書式を有効に設定
     "jsx": "react",
     "moduleResolution": "node",
-    //    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
     "lib": [
       "es2020",
       "dom"
