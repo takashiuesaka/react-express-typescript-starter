@@ -5,7 +5,7 @@ fetch("/api/").then((response) => {
   console.log(response.json());
 });
 
-const Index = (): React.FC => {
+const Index : React.FC = () => {
   return <div>Hello React - TypeScript!</div>;
 };
 
