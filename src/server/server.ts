@@ -1,9 +1,13 @@
 import express from "express";
 import path from "path";
+import config from "config";
+import {logger} from "./logger";
 
 import sample from "./mod-a/sample";
 
 const app = express();
+
+const serverConfig: any = config.get("server");
 
 app.use(express.static(path.join("./", "dist")));
 
@@ -16,6 +20,9 @@ app.get("*", function (req, res) {
   res.sendFile(path.join("./", "dist", "index.html"));
 });
 
-app.listen(3000, () => {
-  console.log("server running");
+app.listen(serverConfig.port, () => {
+  logger.info(`server starting -> [port] ${serverConfig.port} [env] ${process.env.NODE_ENV}`);
+  // console.log(
+  //   `server starting -> [port] ${serverConfig.port} [env] ${process.env.NODE_ENV}`
+  // );
 });
